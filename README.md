@@ -80,12 +80,12 @@ I wasn't able to get a satisfactory validation accuracy with the LetNet architec
 #### 1. German traffic signs from the web
 
 Here are five German traffic signs that I found on the web:
-<img src="http://www.cusack.co.uk/imagecache/07b66848-f945-4624-8a59-a0de00f01718_800x800.jpg" style="width: 200px;"/>
+<img src="http://www.cusack.co.uk/imagecache/07b66848-f945-4624-8a59-a0de00f01718_800x800.jpg" style="width: 100px;"/>
 
 ![alt text][image4] ![alt text][image5] 
 ![alt text][image6] 
 
-<img src="https://img.clipartfest.com/ef5ae310c8b4a3c120455ff86e8678ac_german-traffic-sign-no-205-traffic-on-205_1300-879.jpeg" style="width: 200px;"/>
+<img src="https://img.clipartfest.com/ef5ae310c8b4a3c120455ff86e8678ac_german-traffic-sign-no-205-traffic-on-205_1300-879.jpeg" style="width: 100px;"/>
 
 The first image is likely to be easy to classify, since all of the characteristics of the sign are evident without artifacts. The third image has details that are small enough to be lost when the image is reduced to 32 x 32 pixels. The fourth image might be difficult to classify because of the distortion of its shape caused by the image angle.
 
@@ -108,40 +108,60 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 For the first image, the model is basically completely sure that it is a no entry sign. Given the pristine nature of the image, this is not surprising.
 
-No entry 1.0
-Stop 1.55949e-18
-Traffic signals 1.24926e-29
-Speed limit (20km/h) 2.52315e-30
-No passing 1.56718e-32
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0        			| No entry  									| 
+| 1.55949e-18     	    | Stop 										    |
+| 1.24926e-29			| Traffic signals								|
+| 2.52315e-30	      	| Speed limit (20km/h)				 			|
+| 1.56718e-32		    | No passing    							    |
 
 For the second image, more uncertainty was observed. The probability for the correct label was barely greater than the one for 60km.
 
-Speed limit (30km/h) 0.484122
-Speed limit (60km/h) 0.45101
-Speed limit (80km/h) 0.0646315
-Speed limit (50km/h) 0.000235438
-Dangerous curve to the right 1.35486e-07
+Speed limit (30km/h) 
+Speed limit (60km/h) 
+Speed limit (80km/h) 
+Speed limit (50km/h) 
+ 
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.484122    	        | 	Speed limit (30km/h				            |
+| 0.45101			    | 	Speed limit (60km/h					        |
+| 0.0646315	      	    | 	Speed limit (80km/h		 			        |
+| 0.000235438		    | 	Speed limit (50km/h				            |
+| 1.35486e-07		    | 	Dangerous curve to the right			    |
 
 For the third image, it is again quite certain. Surprisingly so, given concerns about pixel resolution
 
-Road work 0.984733
-Beware of ice/snow 0.0150242
-Road narrows on the right 0.000119586
-Slippery road 7.56106e-05
-Double curve 4.05349e-05
-
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.984733   	        | 	Road work			                        |
+| 0.0150242			    | 	Beware of ice/snow				            |
+| 0.000119586	      	| 	Road narrows on the right	 			    |
+| 7.56106e-05		    | 	Slippery road			                    |
+| 4.05349e-05		    | 	Double curve			                    |
+ 
 Another surprise in the fourth image. The shape distortion does not appear to have confused the model.
 
-Stop 0.999996
-No entry 2.85719e-06
-Road work 1.43405e-06
-No passing for vehicles over 3.5 metric tons 8.92196e-09
-Speed limit (80km/h) 8.61496e-09
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.999996  	        | 	Stop			                            |
+| 2.85719e-06		    | 	No entry				                    |
+| 0.000119586	      	| 	Road work	 			                    |
+| 8.92196e-09		    | 	No passing for vehicles over 3.5 metric tons|
+| 8.61496e-09		    |   Speed limit (80km/h)		                |
 
 Very high certainty for the final image also. This image is also relatively artifact free.
 
-Yield 1.0
-Speed limit (80km/h) 1.37867e-08
-Speed limit (60km/h) 6.58397e-10
-Road work 3.79426e-11
-Speed limit (50km/h) 2.40711e-12
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0 	                | 	Yield			                            |
+| 1.37867e-08	        | 	Speed limit (80km/h)				        |
+| 6.58397e-10	      	| 	Speed limit (60km/h)	 			        |
+| 3.79426e-11		    | 	Road work                                   |
+| 2.40711e-12		    |   Speed limit (50km/h)	                    |
+ 
+ 
+ 
+ 
+ 
